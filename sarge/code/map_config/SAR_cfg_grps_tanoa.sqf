@@ -29,58 +29,58 @@ private["_markerArray","_k","_heliSpawnArray","_kk","_kkk","_groupAction","_infa
 
 _markerArray =[                     [ "SAR_marker_helipatrol_1",          [10975.4, 8872.47] , [6500, 2200]],
                                     [ "SAR_marker_helipatrol_2",          [7484.52,9047.01] ,  [2200, 6500]], 
-									[ "SAR_marker_helipatrol_3",          [8570.58,10967] ,    [2200, 6500]], 
-									[ "SAR_marker_helipatrol_4",          [10684.5,10908.8] ,  [6200, 3000]], 
-				                    [ "SAR_marker_DEBUG_Inf_1",           [11445.1,2777.09] ,  [500, 500]],
-				                    [ "SAR_marker_DEBUG_Inf_2",           [9498.84,3882.99] ,  [500, 500]],
-				                    [ "SAR_marker_DEBUG_Inf_3",           [9031.04,4657.61] ,  [500, 500]],
-				                    [ "SAR_marker_DEBUG_Patrol_1",        [10975.4, 8872.47] , [4000, 3000]],
-									[ "SAR_marker_DEBUG_Patrol_2",        [7484.52,9047.01] , [3000, 4000]],
-									[ "SAR_marker_DEBUG_Patrol_3",        [8570.58,10967] , [3000, 4000]],
-									[ "SAR_marker_DEBUG_Patrol_4",        [10684.5,10908.8] , [4000, 3000]] ];  //Marker name (need all different names)) , marker position x y, marker size (half W,H)
+				    [ "SAR_marker_helipatrol_3",          [8570.58,10967] ,    [2200, 6500]], 
+				    [ "SAR_marker_helipatrol_4",          [10684.5,10908.8] ,  [6200, 3000]], 
+				    [ "SAR_marker_DEBUG_Inf_1",           [11445.1,2777.09] ,  [500, 500]],
+				    [ "SAR_marker_DEBUG_Inf_2",           [9498.84,3882.99] ,  [500, 500]],
+				    [ "SAR_marker_DEBUG_Inf_3",           [9031.04,4657.61] ,  [500, 500]],
+				    [ "SAR_marker_DEBUG_Patrol_1",        [10975.4, 8872.47] , [4000, 3000]],
+				    [ "SAR_marker_DEBUG_Patrol_2",        [7484.52,9047.01] , [3000, 4000]],
+				    [ "SAR_marker_DEBUG_Patrol_3",        [8570.58,10967] , [3000, 4000]],
+				    [ "SAR_marker_DEBUG_Patrol_4",        [10684.5,10908.8] , [4000, 3000]] ];  //Marker name (need all different names)) , marker position x y, marker size (half W,H)
 									
 ////////////// HELI SETTINGS   Heli number,type of group, respawn, respawn time/////////									
 				
 _heliSpawnArray = [                 [1,1,true,60],
                                     [1,1,true,60],
-									[1,1,true,60],
-									[1,1,true,60],
-									[0,1,true,60],
-									[0,1,true,60],
-									[0,1,true,60],
-									[0,1,true,60],
-									[0,1,true,60],
-									[0,1,true,60],
-									[0,1,true,60] ];  // number of heli spawn x marker ( array content elements number need to be equal of markers number!!!)	: heli spawn numb (0= no spawn), type( 1= soldier 2=civilian 3=bandits) (1,2,true,60) 1 heli civilian (2,1,true,60) 2 heli Soldiers, respawn (true or false) , respawn time
+				    [1,1,true,60],
+				    [1,1,true,60],
+				    [0,1,true,60],
+				    [0,1,true,60],
+				    [0,1,true,60],
+				    [0,1,true,60],
+				    [0,1,true,60],
+				    [0,1,true,60],
+				    [0,1,true,60] ];  // number of heli spawn x marker ( array content elements number need to be equal of markers number!!!)	: heli spawn numb (0= no spawn), type( 1= soldier 2=civilian 3=bandits) (1,2,true,60) 1 heli civilian (2,1,true,60) 2 heli Soldiers, respawn (true or false) , respawn time
 									
 ////////////// INFANTRY SETTINGS   Infantry Groups Number,type of group,umb sniper, numb rifleman,action,respawn,respawn time /////////////////////////										
 
 _infantrySpawnArray = [             [0,0,0,0,"ambush",true,60],
                                     [0,0,0,0,"fortify",true,60],
-					                [0,0,0,0,"fortify",true,60],
-					                [0,0,0,0,"fortify",true,60],
-					                [1,1,0,5,"patrol",true,60],
-									[1,1,0,5,"patrol",true,60],
-									[1,1,0,4,"patrol",true,60],
-									[0,1,0,9,"fortify",true,60],
-									[0,1,0,9,"fortify",true,60],
-									[0,1,0,9,"fortify",true,60],
-					                [0,1,0,6,"patrol",true,60] ];  // number of infantry group ( array content elements number need to be equal of markers number!!!) : units  group numbers (0= no spawn),type ( 1= soldier 2=civilian 3=bandits), numb sniper, numb rifleman, action type ("ambush" "fortify" or "patrol"), respawn true or false, respawntime
+			            [0,0,0,0,"fortify",true,60],
+	                            [0,0,0,0,"fortify",true,60],
+	                            [1,1,0,5,"patrol",true,60],
+				    [1,1,0,5,"patrol",true,60],
+			            [1,1,0,4,"patrol",true,60],
+				    [0,1,0,9,"fortify",true,60],
+				    [0,1,0,9,"fortify",true,60],
+				    [0,1,0,9,"fortify",true,60],
+				    [0,1,0,6,"patrol",true,60] ];  // number of infantry group ( array content elements number need to be equal of markers number!!!) : units  group numbers (0= no spawn),type ( 1= soldier 2=civilian 3=bandits), numb sniper, numb rifleman, action type ("ambush" "fortify" or "patrol"), respawn true or false, respawntime
 									
 ////////////// VEHICLES PATROL SETTINGS   number of veh, type of group, leader numb,leader numb,sniper numb,rifleman numb,respawn,respawn time/////////////////////////										
 
 									
 _vehPatrolDef =[                    [0,1,1,2,2,true,60],
                                     [0,1,1,2,2,true,60],
-				                    [0,1,1,1,1,true,60],
-				                    [0,1,1,1,2,true,60],
-									[0,1,1,1,2,true,60],
-									[0,1,1,1,2,true,60],
-									[0,1,1,1,2,true,60],
-									[1,1,1,1,2,true,60],
-									[1,1,1,1,2,true,60],
-				                    [1,1,1,2,2,true,60],
-				                    [1,1,1,2,2,true,60] ];// ( array content elements number need to be equal of markers number!!!) : number of veh patrol (0= no spawn), type of group ( 1= soldier 2=civilian 3=bandits), leader numb,sniper numb,rifleman numb,respawn true or false ,time respawn
+				    [0,1,1,1,1,true,60],
+				    [0,1,1,1,2,true,60],
+				    [0,1,1,1,2,true,60],
+				    [0,1,1,1,2,true,60],
+				    [0,1,1,1,2,true,60],
+			            [1,1,1,1,2,true,60],
+	                            [1,1,1,1,2,true,60],
+				    [1,1,1,2,2,true,60],
+				    [1,1,1,2,2,true,60] ];// ( array content elements number need to be equal of markers number!!!) : number of veh patrol (0= no spawn), type of group ( 1= soldier 2=civilian 3=bandits), leader numb,sniper numb,rifleman numb,respawn true or false ,time respawn
 
 									
 _vehPatrolArray =[	
